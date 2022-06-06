@@ -12,7 +12,7 @@ PyAEDT讓使用者可以透過Python程式碼控制AEDT(HFSS, Circuit, Q3D, Maxw
 - pyAEDT API使用說明
 - 開發模式與使用者模式介紹
 
-### Week2 使用Python程式碼建立並完成天線模擬
+### Week2 使用Python程式碼建立模型並完成模擬
 - 專案建立，材料庫導入與3D建模
 - 激發源與邊界設定
 - 設定，掃頻與模擬
