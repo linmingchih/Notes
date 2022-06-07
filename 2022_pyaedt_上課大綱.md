@@ -36,14 +36,8 @@ PyAEDT讓使用者可以透過Python程式碼控制AEDT(HFSS, Circuit, Q3D, Maxw
 - 模擬資料擷取與繪圖
 - 掃描及優化設定
 
-### Week6 複雜結構模型參數化
-- 屬性設定
-- 結構規劃與參數化
-- 代碼編輯
-- 參數化設計建模
-
-## week6 連結OptisLang以優化設計
-- Optislang簡介
-- 優化演算法介紹
-- 代理模型
-- PyAEDT程式碼連接並執行設計優化
+### Week6 複雜結構模型參數化並連結OptisLang以優化設計 
+- Optislang簡介 
+- 優化演算法介紹 
+- 代理模型 
+- PyAEDT程式碼連接並執行設計優化 
