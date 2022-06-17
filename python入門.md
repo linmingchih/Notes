@@ -7,7 +7,7 @@
 
 以上的position, substrate_height, layer1_material皆為變數。
 
-#### 基本資料型態
+#### 基本資料類別
 1. 整數
 
         vias_count = 104
@@ -33,24 +33,23 @@
         is_metal = True
         enabled = False
 
-#### 基本資料結構
+#### 基本資料結構類別
 變數不只可以指向基本資料，也可以指向資料結構，常用的基本資料結構有以下幾種：
 1. list，由中括號組成：
-
+        result = []
         layers = ['top', 'pwr', 'gnd', 'bottom']
         nets = ['dq0', 'dq1', 'dq3']
         
 2. tuple，由小括號組成：
-
         location = (1 ,2, 1)
         layer_property = ('top', 1.1, 'copper', True)
 
 3. dictionary，由大括號組成：
-
+        information = {}
         layer_thickness = {'top':1.3, 'bottom':1.4}
         dielectric_info = {'fr4_A':(4.3, 0.02), 'fr4_B':(3.9, 0.015), 'fr4_C':(2.8, 0.021)}
         
-#### 類別與物件
+#### 自訂義類別與物件
 類別是進階的資料型態，一般由開發者自訂，以下是一個簡單的class定義：
 
         class fuel_tank:
@@ -93,11 +92,14 @@
         print(x.fuel_amount)
         x.fill_fuel_amount(30)
         
-我們程式也可以這麼寫：
+程式也可以這麼寫：
         
         print(car1.fuel_tank.fuel_amount)
+        car1.fuel_tank.fuel_amount = 30
         car1.fuel_tank.fill_fuel_amount(30)
-        
+
+是要用屬性還是用函數取得/設定物件內部狀態取決於物件開發者當初怎麼定義物件，一般來說，簡單的狀態會使用屬性，複雜的狀態會使用函數。
+
 編寫PyAEDT腳本不需要自行開發類別及物件，但是一定要會了解如何使用物件，因為pyAEDT當中所有可以操控的動作都必須透過物件來完成。
 因為整個AEDT就是一個由很多子物件構成的複雜物件，開發者必須清楚知道每個子物件的位置及對應的屬性及函數。
 
@@ -110,7 +112,18 @@
 但是如果AEDT視窗已開啟，且當中已有開啟的hfss設計，則上面程式碼的hfss變數則會指向該設計所對應的物件。
 
 #### 如何知道該物件的函數與屬性有哪些？
+我們可以用type()函數取得物件類別或dir()函數來
+        type(hfss)
+        dir(hfss)
+
+### 常用hfss物件
+hfss常用屬性及方法
+
+## hfss.materials
 
 
-                
+#### hfss.modeler
+
+
+#### fss.post
                
