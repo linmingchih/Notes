@@ -26,7 +26,7 @@
         layer_name = 'GND'
         width = "10mil"
         
-注意雙引號""跟''單引號都可以用來定義字串
+注意雙引號"跟'單引號都可以用來定義字串
 
 4. 布林
 
@@ -55,13 +55,13 @@
 
         class fuel_tank:
             def __init__(self):
-                self.fuel = 0
+                self.fuel_amount = 0
                 
             def get_fuel_amount(self):
-                return self.fuel
+                return self.fuel_amount
                 
             def fill_fuel_amount(self, liter=0)
-                self.fuel += liter
+                self.fuel_amount += liter
 
         class car:
             def __init__(self, name, color):
@@ -75,11 +75,42 @@
             
             def get_speed(self):
                 return self.speed
-                
-編寫PyAEDT腳本很少需要自行開發類別及物件，但是一定要會使用他們，因為pyAEDT當中所有可以操控的動作都必須透過物件來完成。
+
+在car類別當中, name, color是屬性(property)，set_speed()與get_speed()是方法(method)。我們可以透過屬性及方法來知道物件的訊息，或是修改物件，比方說：
+
+        car1.name = 'toyota'  
+        print(car1.name)
+              
+        car1.set_speed(60)
+        print(car1.get_speed)
+
+屬性可以是基本資料型態，基本資料結構，甚至是另一個物件，比方說：
+
+        x = car1.fuel_tank
+        
+ x便是指向另一個物件，當然我們也可以對該物件進行讀取或設定：
+ 
+        print(x.fuel_amount)
+        x.fill_fuel_amount(30)
+        
+我們程式也可以這麼寫：
+        
+        print(car1.fuel_tank.fuel_amount)
+        car1.fuel_tank.fill_fuel_amount(30)
+        
+編寫PyAEDT腳本不需要自行開發類別及物件，但是一定要會了解如何使用物件，因為pyAEDT當中所有可以操控的動作都必須透過物件來完成。
 因為整個AEDT就是一個由很多子物件構成的複雜物件，開發者必須清楚知道每個子物件的位置及對應的屬性及函數。
 
-開發過程便是要設定
+#### 取得hfss物件
+如果AEDT視窗已開啟，但是當中不存在開啟的專案，執行下面程式碼會啟動一個新的hfss設計，hfss變數將會指向該設計對應的物件，
+
+        from pyaedt import Hfss
+        hfss = Hfss(specified_version='2022.1')
+
+但是如果AEDT視窗已開啟，且當中已有開啟的hfss設計，則上面程式碼的hfss變數則會指向該設計所對應的物件。
+
+#### 如何知道該物件的函數與屬性有哪些？
+
 
                 
                
